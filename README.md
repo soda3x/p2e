@@ -13,7 +13,7 @@ For a single file:
 For entire directories (and optionally subdirectories):
 
 ```sh
-./p2e-batch.sh <path/to/my/pdfs> [r | -recursive]
+./p2e-batch.sh <path/to/my/pdfs> [r | recursive]
 ```
 
 ## Dependencies
