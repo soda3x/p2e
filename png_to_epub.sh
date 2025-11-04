@@ -45,6 +45,13 @@ for index in "${!pngs[@]}"; do
   cp template/page.xhtml $PAGE_FILE
   perl -pi -e "s|IMAGE_REF|${value}|g" $PAGE_FILE
   perl -pi -e "s|PAGE_NUM|Page ${pageNum}|g" $PAGE_FILE
+
+  # Get the page dimensions and set the xhtml page accordingly
+  dimensions=$(identify -format "%wx%h" "./output/$value")
+  width=${dimensions%x*}
+  height=${dimensions#*x}
+  perl -pi -e "s|WIDTH|${width}|g" $PAGE_FILE
+  perl -pi -e "s|HEIGHT|${height}|g" $PAGE_FILE
 done
 
 # Keep the old IFS to restore after

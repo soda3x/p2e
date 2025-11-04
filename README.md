@@ -21,3 +21,4 @@ For entire directories (and optionally subdirectories):
 * perl
 * zip
 * poppler-utils
+* Imagemagick
